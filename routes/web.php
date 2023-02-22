@@ -14,6 +14,43 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $name = 'Andrea';
-    return view('home', compact('name'));
+    $logo_link = [
+        'link' => 'home'
+    ];
+    $header_links = [
+        [
+            'text' => 'Info',
+            'link' => 'info'
+        ],
+        [
+            'text' => 'About us',
+            'link' => 'about'
+        ],
+        [
+            'text' => 'FAQs',
+            'link' => 'faq'
+        ],
+    ];
+    return view('home', compact('header_links', 'logo_link'));
 })->name('home');
+
+Route::get('/info', function () {
+    $logo_link = [
+        'link' => 'home'
+    ];
+    $header_links = [
+        [
+            'text' => 'Info',
+            'link' => 'info'
+        ],
+        [
+            'text' => 'About us',
+            'link' => 'about'
+        ],
+        [
+            'text' => 'FAQs',
+            'link' => 'faq'
+        ],
+    ];
+    return view('info', compact('header_links', 'logo_link'));
+})->name('info');
